@@ -1,0 +1,124 @@
+/* Import a soft, rounded font like 'Nunito' to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+/* Basic reset and font setup */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.landing-page {
+  background-image: 
+    /* This linear-gradient creates a semi-transparent white/light blue overlay */
+    linear-gradient(to bottom, 
+                    rgba(255, 255, 255, 0.6), /* Start with a lighter, slightly opaque white */
+                    rgba(220, 240, 250, 0.6)), /* End with a slightly opaque light blue/cyan */
+    url('/Images/backgroundimage.jpg'); 
+  
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #3f3d56;
+}
+
+/* --- Header Styles --- */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px; /* Added more padding for spacing */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #d96666; /* A color closer to the logo in the image */
+}
+
+.login-signup-btn {
+  background-color: #2DD4BF; /* Teal color from the image */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-signup-btn:hover {
+  background-color: #28bba8; /* A slightly darker shade for hover */
+}
+
+/* --- Main Content Centering --- */
+.landing-main {
+  flex-grow: 1; /* Allows this section to fill the available space */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  text-align: center;
+  padding: 20px;
+}
+
+/* --- Adjusting Main Text Colors --- */
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  color: #333333; /* Darker grey for the main heading, closer to black */
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555555;
+  max-width: 550px;
+  margin: 0 auto 30px auto;
+  font-weight: 600; /* <-- Add this line */
+}
+
+/* --- Hero Button Styles --- */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem; /* Kept this at 1rem, adjust if you want text smaller */
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700; /* Keeping it bold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent; /* Default transparent border */
+}
+
+.btn-start {
+  background-color: #FF6B6B; /* Soft red */
+  color: white;
+  /* border: none; (implicitly set by default above, or you can explicitly set) */
+}
+
+.btn-start:hover {
+  background-color: #e05a5a;
+  transform: translateY(-2px);
+}
+
+.btn-quiz {
+  background-color: #FFFFFF; /* White background */
+  color: #FF6B6B; /* Red text to match "Start Learning" button color */
+  border: 2px solid #FF6B6B; /* Red border to match the text and other button */
+  font-size: 0.95rem; /* Slightly smaller text for the quiz button, if desired */
+}
+
+.btn-quiz:hover {
+  background-color: #fffafa; /* Very slight red tint on hover */
+  border-color: #e05a5a;
+  color: #e05a5a;
+  transform: translateY(-2px);
+}

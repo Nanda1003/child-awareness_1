@@ -1,0 +1,144 @@
+/* Import a friendly, rounded font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* Your application's color palette and theme variables */
+:root {
+  --primary-color: #FF6B6B; /* Vibrant Coral */
+  --secondary-color: #4ECDC4; /* Cool Teal */
+  --tertiary-color: #FFD93D; /* Sunny Yellow */
+  --bg-color: #FFFDF5; /* Creamy White */
+  --card-bg-color: #ffffff;
+  --text-color: #525252; /* Softer Dark Grey */
+  --text-light: #8E8E8E;
+  --border-color: #F0EBE3;
+  --font-family: 'Nunito', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  background-image: url('/Images/backgroundimage.jpg'); /* <-- your image path */
+  background-size: cover; /* cover the entire viewport */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+}
+
+
+.dashboard-container {
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Fix: Prevents the main content from overflowing and overlapping the sidebar */
+  min-width: 0;
+}
+
+/* Base styles for all cards */
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adds the colorful decorative line to the top of each card */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-radius: 20px;
+}
+.logo { font-size: 28px; font-weight: 800; color: var(--primary-color); }
+.dashboard-header nav { display: flex; gap: 16px; }
+.dashboard-header nav a { text-decoration: none; color: var(--text-light); font-weight: 700; padding: 8px 16px; border-radius: 12px; transition: all 0.2s; }
+.dashboard-header nav a.active, .dashboard-header nav a:hover { color: var(--primary-color); background-color: #FFF5F5; }
+.user-profile { display: flex; align-items: center; gap: 16px; }
+.logout-btn { background: none; border: none; color: var(--text-light); font-weight: 700; cursor: pointer; font-size: 16px; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary-color); }
+
+/* Welcome & Info Cards */
+.welcome-banner { background-image: linear-gradient(120deg, #FFFFFF 0%, #FFF9F9 100%); }
+.welcome-banner h1 { font-size: 42px; font-weight: 800; margin: 0; }
+.welcome-banner p { font-size: 18px; color: var(--text-light); margin: 4px 0 0; }
+.info-cards { display: flex; gap: 24px; }
+.info-card { flex: 1; display: flex; align-items: center; gap: 16px; }
+.info-icon { font-size: 28px; padding: 14px; border-radius: 16px; }
+.lightbulb { background-color: #FFF8E1; }
+.trophy { background-color: #FFF3E0; }
+.info-card h3 { margin: 0 0 4px 0; font-size: 18px; font-weight: 700; }
+.info-card p { margin: 0; color: var(--text-light); font-size: 14px; }
+
+/* What's Next & Modules */
+.whats-next h2, .mood-tracker h2, .adventure-map-card h2 { font-size: 26px; font-weight: 800; margin: 0 0 16px 0; }
+.module-cards { display: flex; gap: 24px; }
+.module-card { flex: 1; border-radius: 20px; overflow: hidden; text-align: center; padding-bottom: 20px; background-color: #fafcff; border: 1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+.module-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+.module-card img { width: 100%; height: auto; max-height: 180px; object-fit: contain; display: block; margin: 0 auto; padding-top: 20px; padding-bottom: 10px; }
+.module-card h3 { margin: 16px 0 8px 0; font-weight: 700; }
+.module-card p { margin: 0 16px; color: var(--text-light); font-size: 14px; }
+.module-actions { margin-top: 24px; text-align: center; }
+
+
+/* Mood Tracker */
+.mood-options { display: flex; justify-content: space-around; margin-bottom: 24px; }
+.mood-option { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; padding: 12px; border-radius: 16px; border: 3px solid transparent; transition: all 0.2s; font-weight: 600; }
+.mood-option:hover { background-color: #f7faff; }
+.mood-option.selected { border-color: var(--tertiary-color); transform: scale(1.15); box-shadow: 0 4px 12px rgba(255, 217, 61, 0.4); }
+.mood-emoji { font-size: 42px; }
+
+/* Buttons */
+.btn-tertiary { background-color: var(--tertiary-color); color: var(--text-color); border: none; padding: 14px 28px; border-radius: 16px; font-size: 16px; font-weight: 700; cursor: pointer; }
+.btn-wins { width: 100%; margin-top: 24px; background-color: var(--card-bg-color); color: var(--primary-color); border: 2px solid var(--primary-color); padding: 14px 28px; border-radius: 16px; font-size: 16px; font-weight: 700; cursor: pointer; }
+
+/* NEW: Style for the primary button in the 'What's Next' section */
+.btn-primary { background-color: var(--primary-color); color: white; border: none; padding: 14px 28px; border-radius: 16px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s; }
+.btn-primary:hover { transform: translateY(-2px); }
+
+/* Sidebar */
+.sidebar { width: 350px; flex-shrink: 0; }
+.adventure-map-card { text-align: center; }
+.progress-circle { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; background: conic-gradient(var(--secondary-color) 225deg, #F0EBE3 0deg); }
+.progress-inner { width: 110px; height: 110px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; color: var(--text-light); }
+.progress-inner span { font-size: 32px; font-weight: 800; color: var(--text-color); margin-right: 4px; }
+.progress-text { margin: 0 0 24px 0; line-height: 1.5; color: var(--text-light); }
+.stats { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.stat-item { display: flex; align-items: center; gap: 16px; }
+.stat-icon { font-size: 32px; background-color: #f7faff; padding: 10px; border-radius: 12px; }
+.stat-item > div { display: flex; flex-direction: column; }
+.stat-label { color: var(--text-light); font-size: 14px; font-weight: 600; }
+.stat-value { font-weight: 800; font-size: 20px; }
+
+/* Styles for the new sidebar widgets */
+.sidebar-widgets { margin-top: 24px; display: flex; flex-direction: column; gap: 24px; }
+.sidebar-card { text-align: center; padding: 24px; }
+.sidebar-card::before { display: none; }
+.sidebar-card .icon { font-size: 2.5rem; line-height: 1; margin-bottom: 8px; }
+.sidebar-card h3 { font-size: 1.25rem; font-weight: 800; margin: 0 0 8px 0; color: var(--text-color); }
+.sidebar-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin: 0 0 16px 0; }
+.btn-badge { padding: 10px 20px; border: none; border-radius: 100px; font-size: 0.9rem; font-weight: 700; cursor: pointer; background-color: var(--secondary-color); color: white; transition: all 0.2s; }
+.btn-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
+
